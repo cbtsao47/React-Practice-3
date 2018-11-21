@@ -5,7 +5,7 @@ class Stewie extends React.Component {
     super(props);
     this.state = {
       child: props.child,
-      hair: ""
+      input: ""
     };
   }
   handleChange = event => {
@@ -15,7 +15,7 @@ class Stewie extends React.Component {
   };
   handleTurnHairToBrown = () => {
     const childAttrs = this.state.child;
-    childAttrs.hairColor = this.state.hair;
+    childAttrs.hairColor = this.state.input;
     this.setState({
       child: childAttrs
     });
@@ -29,8 +29,8 @@ class Stewie extends React.Component {
         <input
           type="text"
           onChange={this.handleChange}
-          value={this.state.hair}
-          name="hair"
+          value={this.state.input}
+          name="input"
         />
         <button onClick={this.handleTurnHairToBrown}>
           Click to Change My Hair Color!
